@@ -1,29 +1,33 @@
-$header-height: 3.5 rem;
+$header-height: 3.5rem;
 /* Colors */
 
 /*Color mode HSL(hue, saturation, lightness)*/
-$first-color: hsl(180, 69%, 56%);
-$first-color-alt: hsl(180, 69%, 40%);
+$first-color: hsl(166, 91%, 63%);
+$first-color-alt: hsl(166, 91%, 43%);
+$border-color: hsl(220, 4%, 50%);
+$border-color-alt: hsl(220, 4%, 40%);
 $title-color: hsl(219, 8%, 95%);
 $text-color: hsl(219, 8%, 75%);
 $text-color-light: hsl(219, 4%, 55%);
 $white-color: #fff;
-$body-color: hsl(219, 4%, 4%);
+$body-color: hsl(180, 4%, 9%);
 $container-color: hsl(219, 4%, 7%);
 
 /* Font and typography */
 /*.5rem = 8px | 1rem = 16px ...*/
 $body-font: 'Exo', sans-serif;
-$h1-font-size: 1.5rem;
-$h2-font-size: 1.25rem;
+$h1-font-size: 4.5rem;
+$h2-font-size: 1.5rem;
 $h3-font-size: 1rem;
-$normal-font-size: .938rem;
-$small-font-size: .813rem;
+$text-font-size: 2.5rem;
+$normal-font-size: .9rem;
+$small-font-size: .8rem;
 $smaller-font-size: .75rem;
 
 /* Font weight */
-$font-medium: 500;
+$font-medium: 400;
 $font-semi-bold: 600;
+$font-bold: 800;
 
 /* z index */
 $z-tooltip: 10;
