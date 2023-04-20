@@ -1,12 +1,15 @@
 <template>
   <div class="header">
+    <img class="header-img" src="@/assets/imges/headerBG.jpg" alt="">
+    <div class="container">
+    <div class="aside-logo-shadow">GO<br>SURF</div>
     <aside class="asideBar">
-      <div class="aside-logo">
+      <div class="aside-logo vetical-text">
         <div>GO <span class="aside-logo-span"> - </span> SURF</div>
       </div>
       <div class="aside-menu menu">
         <div class="menu-group">
-          <img class="menu-img" src="@/assets/svg/Surf.svg" alt="">
+          <img class="menu-img" src="@/assets/svg/Surf-aside.svg" alt="">
           <div class="menu-title">Surf</div>
         </div>
         <div class="menu-group">
@@ -26,13 +29,13 @@
         </div>
       </div>
       <div class="menu-date">
-          <div class="menu-day">20</div>
-          <div class="menu-date-info">06 | 2023</div>
-        </div>
-        <div class="menu-map">
-          <img class="menu-icon" src="@/assets/svg/Shape.svg" alt="">
-          <div class="menu-title">California</div>
-        </div>
+        <div class="menu-day">20</div>
+        <div class="menu-date-info">06 | 2023</div>
+      </div>
+      <div class="menu-map">
+        <img class="menu-icon" src="@/assets/svg/Shape.svg" alt="">
+        <div class="menu-title">California</div>
+      </div>
     </aside>
 
     <div class="parallax-bg"></div>
@@ -55,10 +58,10 @@
   >
       <swiper-slide>
         <div class="swiper-slide__map map-mark-1">North Shore | Malibu, CA</div>
-        <div class="swiper-slide__container container">
-          <div class="subtitle-left" data-swiper-parallax="-200">Surf</div>
+        <div class="swiper-slide__container">
+          <div class="headline-left" data-swiper-parallax="-200">Surf</div>
           <div class="title swiper-slide__title" data-swiper-parallax="-300">North Shore</div>
-          <div class="subtitle-left" data-swiper-parallax="-200">ConSurfdition</div>
+          <div class="headline-left" data-swiper-parallax="-200">ConSurfdition</div>
           <div class="text swiper-slide__text" data-swiper-parallax="-100">Radical</div>
           <a href="#" class="slider_btn">
             <img src="@/assets/svg/ShapeLeft.svg" alt="">
@@ -68,9 +71,9 @@
       <swiper-slide>
         <div class="swiper-slide__map map-mark-2">South Shore | Malibu, CA</div>
         <div class="swiper-slide__container">
-          <div class="subtitle-left" data-swiper-parallax="-200">Surf</div>
+          <div class="headline-left" data-swiper-parallax="-200">Surf</div>
           <div class="title swiper-slide__title" data-swiper-parallax="-300">South Shore</div>
-          <div class="subtitle-left" data-swiper-parallax="-200">ConSurfdition</div>
+          <div class="headline-left" data-swiper-parallax="-200">ConSurfdition</div>
           <div class="text swiper-slide__text" data-swiper-parallax="-100">Radical</div>
           <a href="#" class="slider_btn">
             <img src="@/assets/svg/ShapeLeft.svg" alt="">
@@ -79,10 +82,10 @@
       </swiper-slide>
       <swiper-slide>
         <div class="swiper-slide__map map-mark-3">West Shore | Malibu, CA</div>
-        <div class="swiper-slide__container container">
-          <div class="subtitle-left" data-swiper-parallax="-200">Surf</div>
+        <div class="swiper-slide__container">
+          <div class="headline-left" data-swiper-parallax="-200">Surf</div>
           <div class="title swiper-slide__title" data-swiper-parallax="-300">West Shore</div>
-          <div class="subtitle-left" data-swiper-parallax="-200">ConSurfdition</div>
+          <div class="headline-left" data-swiper-parallax="-200">ConSurfdition</div>
           <div class="text swiper-slide__text" data-swiper-parallax="-100">Radical</div>
           <a href="#" class="slider_btn">
             <img src="@/assets/svg/ShapeLeft.svg" alt="">
@@ -91,10 +94,10 @@
       </swiper-slide>
       <swiper-slide>
         <div class="swiper-slide__map map-mark-4">East Shore | Malibu, CA</div>
-        <div class="swiper-slide__container container">
-          <div class="subtitle-left" data-swiper-parallax="-200">Surf</div>
+        <div class="swiper-slide__container">
+          <div class="headline-left" data-swiper-parallax="-200">Surf</div>
           <div class="title swiper-slide__title" data-swiper-parallax="-300">East Shore</div>
-          <div class="subtitle-left" data-swiper-parallax="-200">ConSurfdition</div>
+          <div class="headline-left" data-swiper-parallax="-200">ConSurfdition</div>
           <div class="text swiper-slide__text" data-swiper-parallax="-100">Radical</div>
           <a href="#" class="slider_btn">
             <img src="@/assets/svg/ShapeLeft.svg" alt="">
@@ -145,6 +148,7 @@
     </div>
 
   </div>
+  </div>
 </template>
 <script>
 
@@ -154,7 +158,6 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
-// import required modules
 import { Parallax, Navigation, Thumbs } from 'swiper'
 import { ref } from 'vue'
 export default {
@@ -178,15 +181,23 @@ export default {
 
 <style lang="scss">
 @import '@/assets/styles/variables.scss';
+
 .header {
-  position: relative;
-  display: grid;
+  .header-img {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    filter: blur(3px);
+  }
 }
+
 .header-nav {
   position: absolute;
   width: calc(100% - 200px);
   height: 100vh;
 }
+
 .header-button {
   position: absolute;
   left: 15rem;
@@ -194,38 +205,50 @@ export default {
   animation: move 1.5s infinite;
   z-index: $z-tooltip;
 }
+
 @keyframes move {
   0% {
     bottom: 1rem;
   }
+
   50% {
     bottom: 2rem;
   }
 }
+
 .asideBar {
   position: absolute;
   left: 0;
   min-height: 100vh;
   width: 200px;
-  border-right: 2px solid $border-color-alt;
+  border-right: 1px solid $border-color-alt;
   z-index: $z-fixed;
   display: grid;
   flex-wrap: wrap;
   grid-template-rows: max-content;
   overflow: hidden;
 }
+
+.aside-logo-shadow {
+  position: absolute;
+  font-size: $shadow-font-size;
+  color: #ffffff18;
+  font-weight: $font-bold;
+  line-height: 170px;
+  z-index: 1;
+}
+
 .aside-logo {
   width: 198px;
   position: relative;
-  font-size: 4rem;
-  font-weight: $font-bold;
+  font-size: 3rem !important;
+  font-weight: $font-bold !important;
   color: $white-color;
-  writing-mode: vertical-lr;
-  transform: rotate(180deg);
-  margin-bottom: 5rem;
-  margin-top: 2rem;
+  margin-bottom: 7rem;
+  margin-top: 1rem;
   display: flex;
   align-items: center;
+
   &::before {
     content: '';
     position: absolute;
@@ -236,43 +259,52 @@ export default {
     z-index: -1;
   }
 }
+
 .aside-logo-span {
   position: relative;
   font-weight: $font-medium;
 }
+
 .aside-menu {
-    display: grid;
-    justify-content: center;
-    text-align: center;
-    row-gap: 1rem;
-    justify-self: center;
-    .menu-img {
-      width: 55px;
-      height: 45px;
-    }
-    .menu-icon {
-      width: 24px;
-      height: 24px;
-    }
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  row-gap: 1rem;
+  justify-self: center;
+
+  .menu-img {
+    width: 55px;
+    height: 45px;
   }
+
+  .menu-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 .menu-date {
   display: grid;
   justify-content: center;
+  position: relative;
 }
-.menu-date-info  {
-  position: absolute;
-  left: 34%;
-  bottom: 4.8rem;
+
+.menu-date-info {
+  text-align: center;
 }
+
 .menu-day {
   font-size: $h1-font-size;
   font-weight: $font-bold;
 }
+
 .menu-map {
+  padding-top: 1rem;
   margin: 0 auto;
   width: 90px;
   display: flex;
   justify-content: space-around;
+
   img {
     width: 11px;
     height: 14px;
@@ -293,10 +325,13 @@ export default {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-align: right;
+
   &__container {
+    width: 100%;
+    max-width: 1920px;
     position: absolute;
     bottom: 7rem;
-    right: 5rem;
+    right: 2rem;
     text-align: right;
   }
 
@@ -312,22 +347,27 @@ export default {
     position: absolute;
   }
 }
+
 .map-mark-1 {
   top: 10.9rem;
   right: 44%;
 }
+
 .map-mark-2 {
   top: 15.5rem;
   right: 30%;
 }
+
 .map-mark-3 {
   top: 17.5rem;
   right: 24%;
 }
+
 .map-mark-4 {
   top: 23rem;
   right: 20%;
 }
+
 .parallax-bg {
   position: absolute;
   left: 0;
@@ -339,6 +379,7 @@ export default {
   background-size: cover;
   background-position: center;
 }
+
 .map-bg {
   position: absolute;
   right: 0;
@@ -347,78 +388,49 @@ export default {
   height: 40%;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  width: 30px;
-  height: 21px;
-  position: absolute;
-  background-image: url('@/assets/svg/ShapeLeft.svg');
-  background-repeat: no-repeat;
-  left: auto;
-  right: 5rem;
-  top: 5rem;
-  &::after {
-    content: "";
-  }
-}
-.swiper-button-prev {
-  right: 8rem;
-  rotate: 180deg;
-}
-.slider_btn {
-  display: inline-block;
-  margin-top: 1rem;
-}
-
 .nav {
   position: absolute;
   height: 4rem;
   width: 600px;
-  right: -7.5rem;
+  right: -10.5rem;
   z-index: $z-fixed;
-  bottom: 0rem;
+  bottom: .5rem;
   cursor: pointer;
+
   &__content {
     border-top: 4px solid $text-color-light;
+
     &:focus {
       border-top: 4px solid $first-color;
     }
   }
-  &__item-data{
+
+  &__item-data {
     color: $text-color-light;
     margin-top: .5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
   &__item-title {
-    font-size: $h2-font-size;
+    font-size: $h3-font-size;
     font-weight: $font-bold;
   }
+
   &__item-subtitle {
-    font-size: $h3-font-size;
+    font-size: $normal-font-size;
   }
 }
+
 .swiper-slide-thumb-active {
   border-top: 4px solid $first-color;
 }
-.swiper-slide-thumb-active .nav__item-data{
-  color: $white-color;
-}
-.swiper-slide-active .nav__item-data{
-  color: $white-color;
-}
-// .swiper-pagination {
-//   right: 0;
-// }
-// .swiper-pagination-bullet {
-//     border-radius: 0;
-//     width: 200px;
-//     height: 4px;
-//     background: $text-color-light;
-//     &::after{
-//       content: '01';
-//     }
-// }
 
-</style>
+.swiper-slide-thumb-active .nav__item-data {
+  color: $white-color;
+}
+
+.swiper-slide-active .nav__item-data {
+  color: $white-color;
+}</style>

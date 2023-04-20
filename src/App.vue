@@ -1,6 +1,8 @@
 <template>
   <t-header />
-  <router-view/>
+  <main class="main">
+    <router-view/>
+  </main>
   <t-footer />
 </template>
 

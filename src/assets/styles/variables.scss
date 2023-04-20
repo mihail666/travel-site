@@ -10,16 +10,17 @@ $title-color: hsl(219, 8%, 95%);
 $text-color: hsl(219, 8%, 75%);
 $text-color-light: hsl(219, 4%, 55%);
 $white-color: #fff;
-$body-color: hsl(180, 4%, 9%);
+$body-color: #161818;
 $container-color: hsl(219, 4%, 7%);
 
 /* Font and typography */
 /*.5rem = 8px | 1rem = 16px ...*/
 $body-font: 'Exo', sans-serif;
-$h1-font-size: 4.5rem;
-$h2-font-size: 1.5rem;
-$h3-font-size: 1rem;
+$shadow-font-size: 12.5rem;
 $text-font-size: 2.5rem;
+$h1-font-size: 4.5rem;
+$h2-font-size: 2rem;
+$h3-font-size: 1.125rem;
 $normal-font-size: .9rem;
 $small-font-size: .8rem;
 $smaller-font-size: .75rem;
@@ -33,10 +34,15 @@ $font-bold: 800;
 $z-tooltip: 10;
 $z-fixed: 100;
 
-/* Responsive typography */
-@media screen and (min-width: 968px) {
+@media screen and (max-width: 968px) {
+  .bg {
+    background: #000;
+  }
+
+  $shadow-font-size: 6.25rem;
+  $text-font-size: 1.5rem;
   $h1-font-size: 2.25rem;
-  $h2-font-size: 1.5rem;
+  $h2-font-size: 1rem;
   $h3-font-size: 1.25rem;
   $normal-font-size: .1rem;
   $small-font-size: .875rem;

@@ -1,0 +1,154 @@
+.swiper-container {
+  width: 100%;
+  max-width: 1400px;
+  height: max-content;
+}
+
+.sectionSwiper {
+  position: relative;
+  height: max-content;
+  background: none;
+  top: -5rem;
+
+  &__wrapper {
+    width: 100%;
+    max-width: 1400px;
+    position: relative;
+
+    &.swiper-button-prev {
+      position: relative;
+      top: -5rem;
+    }
+  }
+
+  .slide__img {
+    width: 1115px;
+    height: 750px;
+
+    &-bitmap {
+      position: absolute;
+      width: 650px;
+      bottom: 20rem;
+      right: 0;
+      background-size: cover;
+    }
+    &-cocktail {
+      position: absolute;
+      width: 264px;
+      height: 364px;
+      right: 0rem;
+      bottom: -4rem;
+      overflow: hidden;
+    }
+  }
+
+  .slide__content {
+    margin-top: 10rem;
+    position: relative;
+    width: 100%;
+    color: $white-color;
+    text-align: left;
+    opacity: .1;
+    transition: .3s;
+  }
+
+  .slide__subtitle {
+    position: absolute;
+    right: 2rem;
+    top: 8rem;
+    text-align: right;
+    &:nth-child(2) {
+      position: absolute;
+      top: 40rem;
+      right: 56rem;
+      text-align: left;
+    }
+  }
+
+  .slide__item {
+    &-data {
+      transition: .3s;
+    }
+  }
+
+  .slide__group {
+    margin-top: 5rem;
+    margin-left: 5.5rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    gap: 3rem;
+
+    &-data {
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      gap: 1rem;
+    }
+
+    .data-subtitle {
+      color: $text-color-light;
+    }
+
+    .data-title {
+      font-size: $text-font-size;
+      line-height: 36px;
+    }
+    p {
+      text-align: right;
+      color: $text-color-light;
+    }
+  }
+  .slide__button {
+    margin: 2.5rem auto 0 auto;
+    &::before {
+    content: '';
+    right: -4.5rem;
+    width: 13.3rem;
+  }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 26rem;
+  }
+
+  .swiper-button-prev {
+    right: 5rem;
+  }
+
+  .swiper-button-next {
+    right: 2rem;
+  }
+}
+
+.swiper-slide-active {
+  filter: brightness(100%) !important;
+  z-index: 1000;
+  opacity: 1 !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 30px;
+  height: 21px;
+  position: absolute;
+  background-image: url('@/assets/svg/ShapeLeft.svg');
+  background-repeat: no-repeat;
+  left: auto;
+  right: 1rem;
+  top: 5rem;
+
+  &::after {
+    content: "";
+  }
+}
+
+.swiper-button-prev {
+  right: 4rem;
+  rotate: 180deg;
+}
+
+.slider_btn {
+  display: inline-block;
+  margin-top: 1rem;
+}
