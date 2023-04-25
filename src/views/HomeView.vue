@@ -486,49 +486,47 @@
             :modules="modules"
             :navigation="true"
           >
-            <swiper-slide class="slide__content" v-for="slide in 4" :key="slide">
-              <div class="slide__item-data">
-                <img class="slide__img" src="@/assets/imges/ShopImage.png" alt="">
+            <swiper-slide class="slide__content shop__slide" v-for="slide in 4" :key="slide">
+                <img class="slide__img shop__img" src="@/assets/imges/ShopImage.png" alt="">
 
-                <div class="slide__subtitle content-subtitle">
+                <div class="content-subtitle shop__content">
                   <div class="subtitle">
-                    <h3 class="headline-right">Style</h3>
-                    <h2 class="subtitle__head">North Nugget TT <span>|</span> Surfboard</h2>
-
-                    <div class="subtitle-rating">
-                      <span class="sleep__star" v-for="s in 5" :key="s">
-                        <img src="@/assets/svg/Star.svg" alt="">
-                      </span>
-                      <h2 class="subtitle__head">$799 <span>99</span></h2>
+                    <div class="shop__data">
+                      <h3 class="headline-right">Style</h3>
+                      <h2 class="subtitle__head">North Nugget TT <br> Surfboard</h2>
+                      <div class="subtitle-rating shop-rating">
+                        <span class="shop__star" v-for="s in 5" :key="s">
+                          <img src="@/assets/svg/Star.svg" alt="">
+                        </span>
+                        <h2 class="subtitle__head shop-rating-head">$799 <span>99</span></h2>
+                      </div>
                     </div>
-
-                    <button class="slide__button button">
+                    <button class="button shop__button">
                       Drop <span>-</span> In
                       <img src="@/assets/svg/ShapeLeft.svg" alt="">
                     </button>
                   </div>
                 </div>
-
-                <img class="shop-img1" src="@/assets/imges/Surfboard.png" alt="">
-
-                <div class="slide__group">
-                  <div class="slide__group-data">
-                    <h2 class="data-title">Extras</h2>
-                    <div class="data-content">
-                      <div class="card">
-                        <img class="card-img" src="@/assets/imges/Wax.png" alt="">
-                        <div class="card-title">SEX WAX</div>
-                        <div class="card-price">$24.99</div>
-                      </div>
-                      <div class="card">
-                        <img class="card-img" src="@/assets/imges/Bracelet.png" alt="">
-                        <div class="card-title">SEX WAX</div>
-                        <div class="card-price">$24.99</div>
-                      </div>
+                <img class="shop__img2" src="@/assets/imges/Surfboard.png" alt="">
+                <div class="shop__group">
+                  <h2 class="data-title">Extras</h2>
+                  <div class="shop__group-data">
+                    <div class="card">
+                      <img class="card-img" src="@/assets/imges/Wax.png" alt="">
+                    </div>
+                    <div class="card">
+                      <img class="card-img" src="@/assets/imges/Bracelet.png" alt="">
+                    </div>
+                    <div class="card">
+                      <div class="card-title">SEX WAX</div>
+                      <div class="card-price">$24.99</div>
+                    </div>
+                    <div class="card">
+                      <div class="card-title">SEX WAX</div>
+                      <div class="card-price">$24.99</div>
                     </div>
                   </div>
                 </div>
-              </div>
             </swiper-slide>
           </swiper>
         </div>
@@ -875,5 +873,84 @@ export default {
     }
   }
 }
-
+.shop{
+  &__slide{
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+  }
+  &__content{
+    position: absolute;
+    top: 12rem;
+    left: 0;
+    text-align: left;
+  }
+  &__data{
+    padding-left:4rem;
+  }
+  &__star{
+    flex-direction: column;
+    width: 40px;
+    margin-right: -.5rem;
+    margin-left: -1rem;
+  }
+  &__img{
+    position: absolute;
+    right: 0;
+  }
+  &__img2{
+    position: relative;
+    left: 43%;
+  }
+  &-rating{
+    position: relative;
+    margin: 4rem 0 3rem  0rem;
+    &-head{
+      line-height: 20px;
+      span{
+        position: relative;
+        top: -1rem;
+        font-size: 1rem;
+        text-transform: lowercase;
+      }
+    }
+  }
+  &__button{
+    padding-left: 4rem;
+    &::before {
+      content: '';
+      right: -1.4rem !important;
+      width: 8rem !important;
+    }
+  }
+  &__group{
+    position: absolute;
+    bottom: 0rem;
+    right: 6rem;
+    margin-top: 1rem;
+    &-data{
+      margin: 1.5rem 0;
+      display: grid;
+      gap: .1rem 4rem;
+      grid-template-columns: repeat(2, max-content);
+      .card{
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      .card-title{
+        letter-spacing: 8px;
+        color: $text-color-light;
+      }
+      .card-price {
+        margin: .7rem 0;
+        font-size: $h3-font-size;
+        font-weight: $font-bold;
+      }
+    }
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 12rem;
+  }
+}
 </style>

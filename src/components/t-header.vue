@@ -181,6 +181,7 @@ export default {
 
 <style lang="scss">
 @import '@/assets/styles/variables.scss';
+@import '@/assets/styles/breakpoints.scss';
 
 .header {
   .header-img {
@@ -433,4 +434,5 @@ export default {
 
 .swiper-slide-active .nav__item-data {
   color: $white-color;
-}</style>
+}
+</style>
