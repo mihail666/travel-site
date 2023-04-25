@@ -160,7 +160,7 @@
 
     <section class="travel section">
       <div class="content-container grid">
-        <div class="section-title">
+        <div class="travel-title section-title">
           <span>
             Travel
             <h1>Travel</h1>
@@ -332,7 +332,7 @@
                 <div class="slide__subtitle content-subtitle">
                   <div class="subtitle">
                     <h3 class="headline-right">Airline</h3>
-                    <h2 class="subtitle__head">Virgin Australia</h2>
+                    <h2 class="subtitle__head">Virgin France</h2>
                   </div>
                 </div>
                 <div class="slide__subtitle content-subtitle">
@@ -378,6 +378,7 @@
         </div>
       </div>
     </section>
+
     <section class="sleep section">
       <div class="content-container grid">
         <div class="section-title">
@@ -387,12 +388,85 @@
           </span>
         </div>
 
-        <div class="sleep__subtitle content-subtitle">
-          <div class="subtitle">
-            <h3 class="headline-left">Current location</h3>
-            <h2 class="subtitle__head">California <span>|</span> USA</h2>
-          </div>
+        <div class="sectionSwiper">
+          <swiper class="sectionSwiper__wrapper"
+            :spaceBetween="10"
+            :slidesPerView="1"
+            :loop="true"
+            :grabCursor="true"
+            :modules="modules"
+            :navigation="true"
+          >
+          <swiper-slide class="slide__content" v-for="slide in 4" :key="slide">
+              <div class="slide__item-data">
+                <img class="slide__img" src="@/assets/imges/SleepImage.png" alt="">
+
+                <div class="slide__subtitle sleep__subtitle content-subtitle">
+                  <div class="subtitle">
+                    <h3 class="headline-right">Rating</h3>
+                    <div class="sleep__subtitle-rating">
+                      <h2 class="subtitle__head">Excellent</h2>
+                      <div class="sleep__star" v-for="s in 5" :key="s">
+                        <img src="@/assets/svg/Star.svg" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slide__subtitle content-subtitle">
+                  <div class="subtitle">
+                    <h3 class="headline-left">Resorts</h3>
+                    <h2 class="subtitle__head">Auberge <span>|</span> Australia</h2>
+                  </div>
+                </div>
+
+                <img class="sleep-img1" src="@/assets/imges/Hammock.png" alt="">
+                <img class="sleep-img2" src="@/assets/imges/FrangipaniCopy.png" alt="">
+
+                <div class="slide__group">
+                  <div class="slide__group-data">
+                    <h3 class="data-subtitle vetical-text">Resort</h3>
+                    <h2 class="data-title">Auberge <br> Australia</h2>
+                  </div>
+                  <div class="slide__group-data">
+                    <h3 class="data-subtitle vetical-text"># of Nights</h3>
+                    <div>
+                      <h2 class="data-title">5 Nights</h2>
+                      <div class="sleep__btns">
+                        <div class="sleep__btns-btn">-</div>
+                        <div class="sleep__btns-btn">+</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slide__group-data">
+                    <h3 class="data-subtitle vetical-text"># of Guests</h3>
+                    <div>
+                      <h2 class="data-title sleep__data-title">4 Guests</h2>
+                      <div class="sleep__btns">
+                        <div class="sleep__btns-btn">-</div>
+                        <div class="sleep__btns-btn">+</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slide__group-data">
+                    <h3 class="data-subtitle vetical-text">Pricing</h3>
+                    <div>
+                      <h2 class="data-title">$ 349 USD</h2>
+                      <p>Per Night</p>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="slide__button sleep__button button">
+                  Book <span>-</span> Stay
+                  <img src="@/assets/svg/ShapeLeft.svg" alt="">
+                </button>
+
+                <img class="sleep-img3" src="@/assets/imges/Frangipani.png" alt="">
+              </div>
+            </swiper-slide>
+          </swiper>
         </div>
+
       </div>
     </section>
     <section class="shop section">
@@ -403,12 +477,60 @@
             <h1>Shop</h1>
           </span>
         </div>
+        <div class="sectionSwiper">
+          <swiper class="sectionSwiper__wrapper"
+            :spaceBetween="10"
+            :slidesPerView="1"
+            :loop="true"
+            :grabCursor="true"
+            :modules="modules"
+            :navigation="true"
+          >
+            <swiper-slide class="slide__content" v-for="slide in 4" :key="slide">
+              <div class="slide__item-data">
+                <img class="slide__img" src="@/assets/imges/ShopImage.png" alt="">
 
-        <div class="shop__subtitle content-subtitle">
-          <div class="subtitle">
-            <h3 class="headline-left">Current location</h3>
-            <h2 class="subtitle__head">California <span>|</span> USA</h2>
-          </div>
+                <div class="slide__subtitle content-subtitle">
+                  <div class="subtitle">
+                    <h3 class="headline-right">Style</h3>
+                    <h2 class="subtitle__head">North Nugget TT <span>|</span> Surfboard</h2>
+
+                    <div class="subtitle-rating">
+                      <span class="sleep__star" v-for="s in 5" :key="s">
+                        <img src="@/assets/svg/Star.svg" alt="">
+                      </span>
+                      <h2 class="subtitle__head">$799 <span>99</span></h2>
+                    </div>
+
+                    <button class="slide__button button">
+                      Drop <span>-</span> In
+                      <img src="@/assets/svg/ShapeLeft.svg" alt="">
+                    </button>
+                  </div>
+                </div>
+
+                <img class="shop-img1" src="@/assets/imges/Surfboard.png" alt="">
+
+                <div class="slide__group">
+                  <div class="slide__group-data">
+                    <h2 class="data-title">Extras</h2>
+                    <div class="data-content">
+                      <div class="card">
+                        <img class="card-img" src="@/assets/imges/Wax.png" alt="">
+                        <div class="card-title">SEX WAX</div>
+                        <div class="card-price">$24.99</div>
+                      </div>
+                      <div class="card">
+                        <img class="card-img" src="@/assets/imges/Bracelet.png" alt="">
+                        <div class="card-title">SEX WAX</div>
+                        <div class="card-price">$24.99</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper-slide>
+          </swiper>
         </div>
       </div>
     </section>
@@ -678,6 +800,79 @@ export default {
 
   .swiper-button-next {
     right: 2rem;
+  }
+}
+.travel {
+  .travel-title{
+    h1 {
+      &::before {
+        content: '';
+        right: 1.5rem;
+      }
+    }
+  }
+}
+.sleep {
+  &__subtitle {
+    right: 56rem !important;
+  }
+  &__subtitle-rating {
+    position: relative;
+    display: flex;
+    align-items: center;
+    .sleep__star {
+      width: 52px;
+      margin-right: -1.5rem;
+    }
+  }
+  &-img1,
+  &-img2,
+  &-img3 {
+    position: absolute;
+    right: 0;
+  }
+  &-img1 {
+    width: 565px ;
+    height: 284px;
+    bottom: 23rem;
+  }
+  &-img2 {
+    width: 116px ;
+    height: 182px;
+    filter: drop-shadow(0px -17px 45px rgba(42, 43, 44, 0.3));
+    transform: rotate(0deg);
+    bottom: 20rem;
+  }
+  &-img3{
+    width: 195px;
+    height: 294px;
+    bottom: 1rem;
+  }
+  &__btns {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    &-btn {
+      position: relative;
+      top: -1.5rem;
+      right: 0.5rem;
+      color: $first-color;
+      font-size: $h1-font-size;
+      font-weight: $font-medium;
+      &:nth-child(2) {
+        top: -.4rem;
+        right: 0;
+        font-size: $text-font-size;
+        font-weight: $font-bold;
+      }
+    }
+  }
+  &__button {
+    &::before {
+      content: '';
+      right: -2.3rem !important;
+      width: 11.3rem !important;
+    }
   }
 }
 
